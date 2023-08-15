@@ -1,4 +1,4 @@
-### Wope Case
+# Wope Case
 Bu uygulama GoFiber, Gorm ve PostgreSQL kullanarak basit bir web uygulaması örneğidir.
 
 Docker imajı multi-stage build ile oluşturuldu, ilk aşamada kaynak kodlar kopyalanıp uygulama build ediliyor, ikinci aşamada ise binary dosyası ve uygulamanın çalışması için gerekli kütüphaneler kopyalanıp yeni bir imaj oluşturuluyor.
