@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: "{{ .Release.Name }}-{{ .Values.serverName }}-deployment"
+  labels:
+    team: devops
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: "{{ .Release.Name }}-{{ .Values.serverName }}"
+  template:
+    metadata:
+      labels:
+        app: "{{ .Release.Name }}-{{ .Values.serverName }}"
+    spec:
+      containers:
+      - name: backend
+        image: arifcelik/fiber-server:latest
+        ports:
+        - containerPort: 8080
+        env:
+        - name: PORT
+          value: "{{ .Values.serverPort }}"
+        - name: DATABASE_URL
+          value: "postgres://postgres:mypassword@{{ .Values.dbServiceName }}:5432/fiber?sslmode=disable"

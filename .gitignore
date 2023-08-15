@@ -1,0 +1,4 @@
+db/
+migraions/
+
+.env
