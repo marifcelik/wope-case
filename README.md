@@ -18,6 +18,16 @@ Uygulama için bir helm chart oluşturdum. Chart' ı deploy etmek için, projeni
 | `PATCH /:id`   | Bir taskı günceller.       |
 | `DELETE /:id`  | Bir taskı siler.           |
 
+## Bash Script
+Bu script uygulamayı çalıştırmak için bir kısayol görevi görür. 4 farklı parametre alır.
+- parametre olarak `docker` verirsek `docker compose up` komutunu çalıştırır.
+- parametre olarak `helm` verirsek helm klasörü içerisindeki chart'ı
+kullanarak uygulamayı kubernetes cluster'ına deploy eder.
+- parametre olarak `kubernetes` veya `k8s` verirsek kubernetes klasörü içerisindeki
+yaml dosyalarını kullanarak uygulamayı kubernetes cluster'ına deploy eder.
+- parametre olarak `install` verirsek çalıştırılan sistem üzerine minikube
+ve kubectl kurulumu yapar.
+
 ### Aldığım Notlar
 Uygulamanın daha iyi olması için;
 - bir front end yapılabilir
